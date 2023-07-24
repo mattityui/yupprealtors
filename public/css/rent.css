@@ -1,0 +1,128 @@
+.nav-link {
+    color: rgb(48, 48, 48);
+    font-size: 20px;
+}
+.navbar-toggler {
+    border: 0 !important;
+}
+.navbar-brand img {
+    width: 100px;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+}
+
+/* Lines of the Toggler */
+.toggler-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #e74c3c;
+    display: block;
+    transition: all 0.2s;
+}
+
+/* Adds Space between the lines */
+.middle-bar {
+    margin: 5px auto;
+}
+
+/* State when navbar is opened (START) */
+.navbar-toggler .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+
+.navbar-toggler .middle-bar {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+}
+/* State when navbar is opened (END) */
+
+/* State when navbar is collapsed (START) */
+.navbar-toggler.collapsed .top-bar {
+    transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+    transform: rotate(0);
+}
+/* State when navbar is collapsed (END) */
+
+/* Color of Toggler when collapsed */
+.navbar-toggler.collapsed .toggler-icon {
+    background-color: rgb(48, 48, 48);
+    margin-left: 10px;
+}
+.navbar.navbar-expand-lg.text-light {
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    padding-top: 25px;
+    flex-direction: row;
+    align-items: center;
+    /* border-bottom-color: black; */
+    box-shadow: -6px 4px 17px 0px rgba(0, 0, 0, 0.2);
+    height: 10vh;
+}
+
+.search-location-rent label {
+    display: flex;
+}
+.search-location-rent input {
+    width: 70%;
+    height: 4vh;
+}
+.search-location-rent select {
+    width: 49%;
+    height: 4vh;
+}
+.search-location-rent button {
+    height: 4vh;
+    border-radius: 0.1em;
+}
+.search-location-rent button:hover {
+    scale: 1.05;
+}
+.rent-feedback {
+    background-color: #f5f5f5;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: center;
+}
+.search-location-rent {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid darkgray;
+    padding-bottom: 35px;
+}
+.search-location-rent img {
+    height: 50vh;
+}
+.home .card-title {
+    text-align: left;
+    font-weight: 600;
+    font-size: 22px;
+    /* text-decoration: none; */
+}

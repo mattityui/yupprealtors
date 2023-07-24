@@ -1,0 +1,230 @@
+.container-fluid {
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.property_details {
+    padding-top: 10%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+.property_details h1 {
+    font-family: Lato-bold;
+    font-size: 35px;
+    color: #e7311d;
+    text-align: center;
+}
+.details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-bottom: 20px;
+}
+/* .bathrooms-wrapper {
+    text-align: center;
+}
+
+.bathrooms-text {
+    font-weight: bold;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    border-radius: 10px; 
+    padding: 8px 16px; 
+    display: inline-block; 
+}
+.bathrooms-text p {
+    font-size: 20px;
+} */
+.bathrooms-text strong {
+    font-size: 30px;
+}
+.bathrooms-text {
+    text-align: center;
+}
+.bedrooms-text {
+    text-align: center;
+}
+.floor-text {
+    text-align: center;
+}
+.lot-text {
+    text-align: center;
+}
+.floor-text strong {
+    font-size: 30px;
+}
+.lot-text strong {
+    font-size: 30px;
+}
+.price-text strong {
+    font-size: 30px;
+}
+.price-text {
+    text-align: center;
+}
+/* .bathrooms-wrapper {
+    text-align: center;
+}
+
+.bathrooms-text {
+    font-weight: bold;
+    background-color: #ffffff; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    border-radius: 10px; 
+    padding: 8px 16px; 
+    display: inline-block; 
+}
+ .bedroom-text p {
+    font-size: 20px;
+} */
+.bedrooms-text strong {
+    font-size: 30px;
+}
+.navbar-expand-lg .navbar-collapse {
+    align-items: center;
+    justify-content: flex-end;
+}
+.navbar-brand img {
+    width: 100px;
+}
+@media (max-width: 821px) {
+    /* Desktop view */
+    .navbar-brand img {
+        width: 110px;
+    }
+}
+.navbar-brand .navbar-nav li {
+    color: white !important;
+}
+.nav-link:hover {
+    color: rgb(240, 63, 63);
+}
+.nav-link.active:hover {
+    color: rgb(240, 63, 63);
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .show > .nav-link {
+    font-weight: bold;
+    color: rgb(240, 63, 63);
+}
+.nav-pills .nav-link {
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    color: black;
+}
+.nav-item {
+    margin-bottom: 5px;
+}
+.navbar-toggler {
+    border: 0 !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+}
+
+/* Lines of the Toggler */
+.toggler-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #e74c3c;
+    display: block;
+    transition: all 0.2s;
+}
+
+/* Adds Space between the lines */
+.middle-bar {
+    margin: 5px auto;
+}
+
+/* State when navbar is opened (START) */
+.navbar-toggler .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+
+.navbar-toggler .middle-bar {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+}
+/* State when navbar is opened (END) */
+
+/* State when navbar is collapsed (START) */
+.navbar-toggler.collapsed .top-bar {
+    transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+    transform: rotate(0);
+}
+/* State when navbar is collapsed (END) */
+
+/* Color of Toggler when collapsed */
+.navbar-toggler.collapsed .toggler-icon {
+    background-color: #ffffff;
+    margin-left: 10px;
+}
+
+.navbar.navbar-expand-lg.text-light {
+    display: flex;
+    padding-top: 25px;
+    flex-direction: row;
+    align-items: center;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    color: #181818;
+    border-bottom: 4px solid #e7311d;
+    background-color: inherit;
+}
+.slider {
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: auto;
+}
+.slider .slide-track {
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(250px * 14);
+}
+.slider .slide {
+    height: 100px;
+    width: 250px;
+}
+.tour {
+    display: flex;
+    flex-direction: row;
+    column-gap: 60px;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+.tour a {
+    padding: 16px;
+    /* font-size: 9px; */
+    font-weight: 600;
+}
+.card {
+    transition: all 0.3s;
+    height: var(--bs-card-height);
+    width: 100%;
+}

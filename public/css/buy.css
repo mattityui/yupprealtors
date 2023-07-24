@@ -1,0 +1,260 @@
+a {
+    text-decoration: none;
+}
+.nav-link {
+    color: rgb(48, 48, 48);
+    font-size: 20px;
+}
+.navbar-toggler {
+    border: 0 !important;
+}
+.navbar-brand img {
+    width: 100px;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+}
+
+/* Lines of the Toggler */
+.toggler-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #e74c3c;
+    display: block;
+    transition: all 0.2s;
+}
+
+/* Adds Space between the lines */
+.middle-bar {
+    margin: 5px auto;
+}
+
+/* State when navbar is opened (START) */
+.navbar-toggler .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+
+.navbar-toggler .middle-bar {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+}
+/* State when navbar is opened (END) */
+
+/* State when navbar is collapsed (START) */
+.navbar-toggler.collapsed .top-bar {
+    transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+    transform: rotate(0);
+}
+/* State when navbar is collapsed (END) */
+
+/* Color of Toggler when collapsed */
+.navbar-toggler.collapsed .toggler-icon {
+    background-color: rgb(48, 48, 48);
+    margin-left: 10px;
+}
+.navbar.navbar-expand-lg.text-light {
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    padding-top: 25px;
+    flex-direction: row;
+    align-items: center;
+    /* border-bottom-color: black; */
+    box-shadow: -6px 4px 17px 0px rgba(0, 0, 0, 0.2);
+    height: 10vh;
+}
+.search-location {
+    display: flex;
+    padding-top: 50px;
+    margin-bottom: 25px;
+    flex-direction: column;
+}
+.search-location label {
+    display: flex;
+}
+.search-location input {
+    width: 100%;
+    height: 4vh;
+}
+.search-location select {
+    width: 49%;
+    height: 4vh;
+}
+.search-location button {
+    width: 100%;
+    margin-top: 24px;
+    height: 4vh;
+    border-radius: 0.1em;
+    background-color: #ff0000;
+}
+.search-location button:hover {
+    scale: 1.05;
+}
+.listing {
+    padding-top: 30px;
+}
+.house-and-lot {
+    border-bottom: 1px solid darkgray;
+    padding-bottom: 35px;
+}
+.condominium {
+    border-bottom: 1px solid darkgray;
+    padding-bottom: 35px;
+    padding-top: 35px;
+}
+.lot-only {
+    padding-bottom: 35px;
+    padding-top: 35px;
+}
+.home .card-text {
+    text-align: left;
+    font-size: 12px;
+}
+
+.price-follow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.fa-heart-o {
+    color: red;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.fa-heart {
+    color: red;
+    cursor: pointer;
+    font-size: 30px;
+}
+.buy-feedback {
+    background-color: #f5f5f5;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: center;
+}
+.slick-slider .slick-prev,
+.slick-slider .slick-next {
+    display: none !important;
+}
+
+.hidden-card {
+    display: none !important;
+}
+.show-card {
+    display: inline-block !important;
+}
+.slick-carousel.property-images .property-image.hidden-image {
+    display: none !important;
+}
+
+.hidden-card-condo {
+    display: none !important;
+}
+.show-card-condo {
+    display: inline-block !important;
+}
+.show-more-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff0000; /* Blue color, you can change this */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.show-more-btn:hover {
+    background-color: #cb3d2d; /* Darker blue color on hover */
+}
+
+.show-more-btn:focus {
+    outline: none; /* Remove the default focus outline */
+}
+
+.show-more-btn:active {
+    transform: scale(0.95); /* Slightly scale down on button press */
+}
+.show-more-condo {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff0000; /* Blue color, you can change this */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.show-more-condo:hover {
+    background-color: #cb3d2d; /* Darker blue color on hover */
+}
+
+.show-more-condo:focus {
+    outline: none; /* Remove the default focus outline */
+}
+
+.show-more-condo:active {
+    transform: scale(0.95); /* Slightly scale down on button press */
+}
+.hidden-card-condo {
+    display: none !important;
+}
+.show-card-condo {
+    display: inline-block !important;
+}
+.show-more-lot {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff0000; /* Blue color, you can change this */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.show-more-lot:hover {
+    background-color: #cb3d2d; /* Darker blue color on hover */
+}
+
+.show-more-lot:focus {
+    outline: none; /* Remove the default focus outline */
+}
+
+.show-more-lot:active {
+    transform: scale(0.95); /* Slightly scale down on button press */
+}
+.hidden-card-lot {
+    display: none !important;
+}
+.show-card-lot {
+    display: inline-block !important;
+}
