@@ -63,7 +63,9 @@ Route::group(['middleware' => ['auth', 'isAdmin']], function () {
     Route::delete('/admin/lot/{propertyId}/image/{imageId}', [PropertyController::class, 'deletePropertyImageLot'])
         ->name('admin.deletePropertyImageLot');
     Route::post('/admin/lot/{id}/add-image', [PropertyController::class, 'addPropertyImageLot'])->name('admin.addPropertyImageLot');
+    Route::put('admin/tours/{id}', [PropertyController::class, 'confirmTour'])->name('confirmTour');
 });
+
 
 Route::group(['middleware' => ['auth', 'isUser']], function () {
     //House and Lot

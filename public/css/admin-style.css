@@ -440,3 +440,14 @@ label {
 form {
     width: 100%;
 }
+.notif {
+    display: flex;
+    flex-direction: column;
+}
+.confirmed-status {
+    color: green;
+}
+
+.not-confirmed-status {
+    color: red;
+}

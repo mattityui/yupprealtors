@@ -18,6 +18,7 @@ return new class extends Migration
             $table->date('tour_date');
             $table->time('tour_time');
             $table->string('tour_contact_number');
+            $table->boolean('confirmation')->default(false);
             $table->timestamps();
 
             // Add foreign key constraint to link 'property_id' with 'id' in 'properties' table

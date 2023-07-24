@@ -10,8 +10,6 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\Authenticatable;
-use Illuminate\Auth\Authenticatable as AuthenticatableTrait;
-
 
 /**
  * Class User
@@ -32,7 +30,6 @@ use Illuminate\Auth\Authenticatable as AuthenticatableTrait;
  */
 class User extends Model implements Authenticatable
 {
-	use AuthenticatableTrait;
 	protected $table = 'users';
 
 	protected $hidden = [
@@ -52,5 +49,34 @@ class User extends Model implements Authenticatable
 	public function scheduled_tours()
 	{
 		return $this->hasMany(ScheduledTour::class);
+	}
+	public function getAuthIdentifierName()
+	{
+		return 'id'; // Assuming 'id' is the primary key column
+	}
+
+	public function getAuthIdentifier()
+	{
+		return $this->getKey();
+	}
+
+	public function getAuthPassword()
+	{
+		return $this->password;
+	}
+
+	public function getRememberToken()
+	{
+		return $this->remember_token;
+	}
+
+	public function setRememberToken($value)
+	{
+		$this->remember_token = $value;
+	}
+
+	public function getRememberTokenName()
+	{
+		return 'remember_token';
 	}
 }

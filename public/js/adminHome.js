@@ -1,3 +1,38 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const confirmButtons = document.querySelectorAll(".confirm-btn");
+
+    confirmButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+            const tourId = this.dataset.tourId;
+            confirmTour(tourId);
+        });
+    });
+
+    function confirmTour(tourId) {
+        // Use AJAX to send the tourId to the controller for confirmation
+        // You can use Axios, Fetch API, or any other library to make the AJAX request
+        // Here's an example using Axios:
+        axios
+            .post(`/tours/${tourId}/confirm`)
+            .then((response) => {
+                // Handle the response, e.g., display a success message or update the UI
+                if (response.data.success) {
+                    // Tour confirmed successfully
+                    // You can update the UI to show "Confirmed" status for the tour
+                    alert("Tour confirmed successfully.");
+                } else {
+                    // Tour confirmation failed
+                    // You can update the UI to show "Not Confirmed" status for the tour
+                    alert("Tour confirmation failed.");
+                }
+            })
+            .catch((error) => {
+                // Handle any errors that occurred during the AJAX request
+                console.error(error);
+            });
+    }
+});
+
 $(document).ready(function () {
     // Hide all property forms initially
     $("#house_and_lot_form").hide();

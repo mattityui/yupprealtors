@@ -36,9 +36,6 @@
       <section class="pt-5">
         <div class="row">
           @if ($properties)
-          @if ($properties->isEmpty())
-          <p>No properties found.</p>
-          @else
           <div class="home col-lg-4 mb-3">
             <div class="card text-center">
               <img src="{{ $properties->image }}" class="card-img-top carousel-card-img" alt="Property Image">
@@ -65,7 +62,6 @@
             </div>
           </div>
 
-          @endif
           @else
           <p>No properties found.</p>
           @endif

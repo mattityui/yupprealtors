@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon $tour_date
  * @property Carbon $tour_time
  * @property string $tour_contact_number
+ * @property int $confirmation
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * 
@@ -34,7 +35,8 @@ class ScheduledTour extends Model
 		'user_id' => 'int',
 		'property_image_id' => 'int',
 		'tour_date' => 'datetime',
-		'tour_time' => 'datetime'
+		'tour_time' => 'datetime',
+		'confirmation' => 'boolean',
 	];
 
 	protected $fillable = [
@@ -42,7 +44,8 @@ class ScheduledTour extends Model
 		'property_image_id',
 		'tour_date',
 		'tour_time',
-		'tour_contact_number'
+		'tour_contact_number',
+		'confirmation',
 	];
 
 	public function property_image()

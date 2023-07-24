@@ -47,21 +47,21 @@ class PropertyController extends Controller
             ->get();
 
         $scheduledTours = ScheduledTour::query()
-            ->select(DB::raw("CONCAT(u.first_name, ' ', u.last_name) as name, scheduled_tour.tour_contact_number, u.email, p.address, p.type, scheduled_tour.tour_date, scheduled_tour.tour_time"))
+            ->select(DB::raw("CONCAT(u.first_name, ' ', u.last_name) as name,scheduled_tour.id, scheduled_tour.tour_contact_number, u.email, p.address, p.type, scheduled_tour.tour_date,scheduled_tour.confirmation, scheduled_tour.tour_time"))
             ->join('users as u', 'u.id', '=', 'scheduled_tour.user_id')
             ->join('property_images as pi', 'pi.id', '=', 'scheduled_tour.property_image_id')
             ->join('properties as p', 'p.id', '=', 'pi.property_id')
             ->get();
 
         $scheduledCondoTours = ScheduledTour::query()
-            ->select(DB::raw("CONCAT(u.first_name, ' ', u.last_name) as name, scheduled_tour.tour_contact_number, u.email, pc.condo_address, pc.condo_type, scheduled_tour.tour_date, scheduled_tour.tour_time"))
+            ->select(DB::raw("CONCAT(u.first_name, ' ', u.last_name) as name,scheduled_tour.id, scheduled_tour.tour_contact_number, u.email, pc.condo_address, pc.condo_type, scheduled_tour.tour_date,scheduled_tour.confirmation, scheduled_tour.tour_time"))
             ->join('users as u', 'u.id', '=', 'scheduled_tour.user_id')
             ->join('property_images as pi', 'pi.id', '=', 'scheduled_tour.property_image_id')
             ->join('properties_condo as pc', 'pc.condo_id', '=', 'pi.property_condo_id')
             ->get();
 
         $scheduledLotTours = ScheduledTour::query()
-            ->select(DB::raw("CONCAT(u.first_name, ' ', u.last_name) as name, scheduled_tour.tour_contact_number, u.email, pl.lot_address, pl.lot_type, scheduled_tour.tour_date, scheduled_tour.tour_time"))
+            ->select(DB::raw("CONCAT(u.first_name, ' ', u.last_name) as name,scheduled_tour.id, scheduled_tour.tour_contact_number, u.email, pl.lot_address, pl.lot_type,scheduled_tour.confirmation, scheduled_tour.tour_date, scheduled_tour.tour_time"))
             ->join('users as u', 'u.id', '=', 'scheduled_tour.user_id')
             ->join('property_images as pi', 'pi.id', '=', 'scheduled_tour.property_image_id')
             ->join('properties_lot as pl', 'pl.lot_id', '=', 'pi.property_lot_id')
@@ -622,6 +622,7 @@ class PropertyController extends Controller
             ->first();
 
         // Now you can access the first property image's ID and image in the view
+
         if ($firstPropertyCondoImage) {
             $firstPropertyCondoImage->image = asset('images/properties/' . $firstPropertyCondoImage->image);
         }
@@ -732,5 +733,22 @@ class PropertyController extends Controller
 
         // Optionally, you can redirect back with a success message
         return redirect()->route('buy', ['id' => $propertyId])->with('success', 'Scheduled tour successfully.');
+    }
+    public function confirmTour(string $id)
+    {
+
+        $scheduledTour = ScheduledTour::find($id);
+
+        if ($scheduledTour) {
+            // Update the confirmation status for the selected tour
+            $scheduledTour->confirmation = !$scheduledTour->confirmation;
+            $scheduledTour->save();
+
+            // You can return a response to the AJAX request to indicate success
+            return back()->with('success', 'Successfully updated');
+        }
+
+        // Tour not found, return an error response
+        return response()->json(['success' => false, 'error' => 'Tour not found.']);
     }
 }

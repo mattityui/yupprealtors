@@ -329,67 +329,149 @@
                 </section>
 
                 <section id="notif" class="section notif">
-                    <form>
-                        <table class="table">
-                            <h1 class="text-center pb-4">Request Tours/ Site Tours</h1>
-                            <thead>
-                                <tr>
-                                    <th class="text-center"></th>
-                                    <th class="text-center">Name</th>
-                                    <th class="text-center">Contact Number</th>
-                                    <th class="text-center">E-mail</th>
-                                    <th class="text-center">Address</th>
-                                    <th class="text-center">Property Type</th>
-                                    <th class="text-center">Date</th>
-                                    <th class="text-center">Time</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($scheduledTours as $tour)
-                                <tr>
-                                    <input type="checkbox" id="verification_check">
-                                    <td class="text-center">{{ $tour->name }}</td>
-                                    <td class="text-center">{{ $tour->tour_contact_number }}</td>
-                                    <td class="text-center">{{ $tour->email }}</td>
-                                    <td class="text-center">{{ $tour->address }}</td>
-                                    <td class="text-center">{{ str_replace ('_',' ',$tour->type) }}</td>
-                                    <td class="text-center">{{ \Carbon\Carbon::parse($tour->tour_date)->format('M d, Y')
-                                        }}</td>
-                                    <td class="text-center">{{ \Carbon\Carbon::parse($tour->tour_time)->format('h:i A')
-                                        }}</td>
-                                </tr>
-                                @endforeach
-                                @foreach ($scheduledCondoTours as $tour)
-                                <tr>
-                                    <input type="checkbox" id="verification_check">
-                                    <td class="text-center">{{ $tour->name }}</td>
-                                    <td class="text-center">{{ $tour->tour_contact_number }}</td>
-                                    <td class="text-center">{{ $tour->email }}</td>
-                                    <td class="text-center">{{ $tour->condo_address }}</td>
-                                    <td class="text-center">{{ str_replace('_', ' ', $tour->condo_type) }}</td>
-                                    <td class="text-center">{{ \Carbon\Carbon::parse($tour->tour_date)->format('M d, Y')
-                                        }}</td>
-                                    <td class="text-center">{{ \Carbon\Carbon::parse($tour->tour_time)->format('h:i A')
-                                        }}</td>
-                                </tr>
-                                @endforeach
-                                @foreach ($scheduledLotTours as $tour)
-                                <tr>
-                                    <input type="checkbox" id="verification_check">
-                                    <td class="text-center">{{ $tour->name }}</td>
-                                    <td class="text-center">{{ $tour->tour_contact_number }}</td>
-                                    <td class="text-center">{{ $tour->email }}</td>
-                                    <td class="text-center">{{ $tour->lot_address }}</td>
-                                    <td class="text-center">{{ ucwords(str_replace('_', ' ', $tour->lot_type)) }}</td>
-                                    <td class="text-center">{{ \Carbon\Carbon::parse($tour->tour_date)->format('M d, Y')
-                                        }}</td>
-                                    <td class="text-center">{{ \Carbon\Carbon::parse($tour->tour_time)->format('h:i A')
-                                        }}</td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                    <table class="table">
+                        <h1 class="text-center pb-4">Request Tours/ Site Tours</h1>
+                        <thead>
+                            <tr>
+                                <th class="text-center">Name</th>
+                                <th class="text-center">Contact Number</th>
+                                <th class="text-center">E-mail</th>
+                                <th class="text-center">Address</th>
+                                <th class="text-center">Property Type</th>
+                                <th class="text-center">Date</th>
+                                <th class="text-center">Time</th>
+                                <th class="text-center">Status</th>
+                                <th class="text-center">Confirm</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach ($scheduledTours as $tour)
+
+                            <tr>
+                                <td class="text-center">{{ $tour->name }}</td>
+                                <td class="text-center">{{ $tour->tour_contact_number }}</td>
+                                <td class="text-center">{{ $tour->email }}</td>
+                                <td class="text-center">{{ $tour->address }}</td>
+                                <td class="text-center">{{ str_replace ('_',' ',$tour->type) }}</td>
+                                <td class="text-center">{{ \Carbon\Carbon::parse($tour->tour_date)->format('M d,
+                                    Y')
+                                    }}</td>
+                                <td class="text-center">{{ \Carbon\Carbon::parse($tour->tour_time)->format('h:i
+                                    A')
+                                    }}</td>
+                                <td class="text-center">
+                                    @if ($tour->confirmation)
+                                    <span class="confirmed-status">Confirmed</span>
+                                    @else
+                                    <span class="not-confirmed-status">Not Confirmed</span>
+                                    @endif
+                                </td>
+                                <td class="text-center">
+                                    @if ($tour->confirmation)
+
+                                    <form action="{{ route('confirmTour', ['id' => $tour->id]) }}" method="post">
+                                        @csrf
+                                        @method('put')
+                                        <button type="submit" class="btn btn-danger">Cancel</button>
+                                    </form>
+                                    @else
+
+                                    <form action="{{ route('confirmTour', ['id' => $tour->id]) }}" method="post">
+                                        @csrf
+                                        @method('put')
+                                        <button type="submit" class="btn btn-primary">Confirm</button>
+                                    </form>
+                                    @endif
+                                </td>
+                            </tr>
+                            @endforeach
+                            @foreach ($scheduledCondoTours as $tour)
+                            <tr>
+                                <td class="text-center">{{ $tour->name }}</td>
+                                <td class="text-center">{{ $tour->tour_contact_number }}</td>
+                                <td class="text-center">{{ $tour->email }}</td>
+                                <td class="text-center">{{ $tour->condo_address }}</td>
+                                <td class="text-center">{{ str_replace('_', ' ', $tour->condo_type) }}</td>
+                                <td class="text-center">{{ \Carbon\Carbon::parse($tour->tour_date)->format('M d,
+                                    Y')
+                                    }}</td>
+                                <td class="text-center">{{ \Carbon\Carbon::parse($tour->tour_time)->format('h:i
+                                    A')
+                                    }}</td>
+                                <td class="text-center">
+                                    @if ($tour->confirmation)
+                                    <span class="confirmed-status">Confirmed</span>
+                                    @else
+                                    <span class="not-confirmed-status">Not Confirmed</span>
+                                    @endif
+                                </td>
+                                <td class="text-center">
+                                    @if ($tour->confirmation)
+
+                                    <form action="{{ route('confirmTour', ['id' => $tour->id]) }}" method="post">
+                                        @csrf
+                                        @method('put')
+                                        <button type="submit" class="btn btn-danger">Cancel</button>
+                                    </form>
+                                    @else
+
+                                    <form action="{{ route('confirmTour', ['id' => $tour->id]) }}" method="post">
+                                        @csrf
+                                        @method('put')
+                                        <button type="submit" class="btn btn-primary">Confirm</button>
+                                    </form>
+                                    @endif
+                                </td>
+                            </tr>
+                            @endforeach
+                            @foreach ($scheduledLotTours as $tour)
+                            <tr>
+                                <td class="text-center">{{ $tour->name }}</td>
+                                <td class="text-center">{{ $tour->tour_contact_number }}</td>
+                                <td class="text-center">{{ $tour->email }}</td>
+                                <td class="text-center">{{ $tour->lot_address }}</td>
+                                <td class="text-center">{{ ucwords(str_replace('_', ' ', $tour->lot_type)) }}
+                                </td>
+                                <td class="text-center">{{ \Carbon\Carbon::parse($tour->tour_date)->format('M d,
+                                    Y')
+                                    }}</td>
+                                <td class="text-center">{{ \Carbon\Carbon::parse($tour->tour_time)->format('h:i
+                                    A')
+                                    }}</td>
+                                <td class="text-center">status</td>
+                                <td class="text-center">
+                                    @if ($tour->confirmation)
+                                    <span class="confirmed-status">Confirmed</span>
+                                    @else
+                                    <span class="not-confirmed-status">Not Confirmed</span>
+                                    @endif
+                                </td>
+                                <td class="text-center">
+                                    @if ($tour->confirmation)
+
+                                    <form action="{{ route('confirmTour', ['id' => $tour->id]) }}" method="post">
+                                        @csrf
+                                        @method('put')
+                                        <button type="submit" class="btn btn-danger">Cancel</button>
+                                    </form>
+                                    @else
+
+                                    <form action="{{ route('confirmTour', ['id' => $tour->id]) }}" method="post">
+                                        @csrf
+                                        @method('put')
+                                        <button type="submit" class="btn btn-primary">Confirm</button>
+                                    </form>
+                                    @endif
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+
+
                     </form>
+
                 </section>
 
 
@@ -405,7 +487,7 @@
         integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="js/adminHome.js"></script>
+    <script src="{{ asset('js/adminHome.js')}}"></script>
 
     @include('layouts/errors')
 
