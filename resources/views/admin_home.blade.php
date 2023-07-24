@@ -192,6 +192,8 @@
                             @endforeach
                         </table>
 
+
+
                     </form>
 
 
@@ -332,6 +334,7 @@
                             <h1 class="text-center pb-4">Request Tours/ Site Tours</h1>
                             <thead>
                                 <tr>
+                                    <th class="text-center"></th>
                                     <th class="text-center">Name</th>
                                     <th class="text-center">Contact Number</th>
                                     <th class="text-center">E-mail</th>
@@ -344,6 +347,7 @@
                             <tbody>
                                 @foreach ($scheduledTours as $tour)
                                 <tr>
+                                    <input type="checkbox" id="verification_check">
                                     <td class="text-center">{{ $tour->name }}</td>
                                     <td class="text-center">{{ $tour->tour_contact_number }}</td>
                                     <td class="text-center">{{ $tour->email }}</td>
@@ -357,6 +361,7 @@
                                 @endforeach
                                 @foreach ($scheduledCondoTours as $tour)
                                 <tr>
+                                    <input type="checkbox" id="verification_check">
                                     <td class="text-center">{{ $tour->name }}</td>
                                     <td class="text-center">{{ $tour->tour_contact_number }}</td>
                                     <td class="text-center">{{ $tour->email }}</td>
@@ -370,6 +375,7 @@
                                 @endforeach
                                 @foreach ($scheduledLotTours as $tour)
                                 <tr>
+                                    <input type="checkbox" id="verification_check">
                                     <td class="text-center">{{ $tour->name }}</td>
                                     <td class="text-center">{{ $tour->tour_contact_number }}</td>
                                     <td class="text-center">{{ $tour->email }}</td>

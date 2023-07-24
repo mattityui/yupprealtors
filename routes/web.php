@@ -33,8 +33,6 @@ Route::get('/user/{id}', [UserController::class, 'showUserAccount'])->name('user
 Route::put('/user/{id}', [UserController::class, 'updateUserAccount'])->name('user.updateaccount');
 
 
-
-
 Route::get('/signinsignup', [UserController::class, 'showSigninSignup'])->name('signup');
 Route::post('/signinsignup', [UserController::class, 'login'])->name('login');
 Route::post('/signinsignup/register', [UserController::class, 'register']);
