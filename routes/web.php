@@ -26,7 +26,7 @@ Route::get('/aboutus', function () {
 Route::get('/rent', function () {
     return view('rent');
 });
-Route::get('/', [PropertyController::class, 'showUserProperties'])->name('buy');
+Route::get('/', [PropertyController::class, 'showUserPropertiesHome']);
 Route::get('/buy', [PropertyController::class, 'showUserProperties'])->name('buy');
 Route::get('/home', [PropertyController::class, 'showUserPropertiesHome'])->name('home');
 Route::get('/user/{id}', [UserController::class, 'showUserAccount'])->name('user.account');
