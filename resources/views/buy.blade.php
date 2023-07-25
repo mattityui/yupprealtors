@@ -98,7 +98,7 @@
             @endif
             <div class="card-body d-grid gap-2">
               <div class="price-follow">
-                <h4 class="card-title">₱{{ number_format($property['property_info']->price) }}</h4>
+                <h4 class="card-title"><strong>₱{{ number_format($property['property_info']->price) }}</strong></h4>
                 <span class="heart"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
               </div>
               <p class="card-text">
@@ -147,7 +147,8 @@
             @endif
             <div class="card-body d-grid gap-2">
               <div class="price-follow">
-                <h4 class="card-title">₱{{ number_format($property['property_info']->condo_price) }}</h4>
+                <h4 class="card-title"><strong>₱{{ number_format($property['property_info']->condo_price) }}</strong>
+                </h4>
                 <span class="heart"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
               </div>
               <p class="card-text">
@@ -196,7 +197,7 @@
             @endif
             <div class="card-body d-grid gap-2">
               <div class="price-follow">
-                <h4 class="card-title">₱{{ number_format($property['property_info']->lot_price) }}</h4>
+                <h4 class="card-title"><strong>₱{{ number_format($property['property_info']->lot_price) }}</strong></h4>
                 <span class="heart"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
               </div>
               <p class="card-text">
