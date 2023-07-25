@@ -111,7 +111,7 @@
                     </p>
                     <button class="btn" id="sign-in-btn">Sign in</button>
                 </div>
-
+                <img src="../images/hotel_logo.png" alt="" class="image pt-4" />
             </div>
             <div class="panel right-panel">
                 <div class="content">
@@ -123,7 +123,7 @@
                     </p>
                     <button class="btn" id="sign-up-btn">Sign up</button>
                 </div>
-
+                <img src="../images/hotel_logo.png" alt="" class="image pt-4" />
             </div>
         </div>
     </div>
