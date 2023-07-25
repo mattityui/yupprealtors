@@ -106,7 +106,7 @@ a {
     margin-top: 24px;
     height: 4vh;
     border-radius: 0.1em;
-    background-color: #ff0000;
+    background-color: #dc3545;
 }
 .search-location button:hover {
     scale: 1.05;

@@ -15,7 +15,6 @@
                     <h2><a href="/rent">RENT</a></h2>
                     <h2><a href="#">DESIGN</a></h2>
                     <h2><a href="#">BUILD</a></h2>
-                    <h2><a href="#">REAL ESTATE AGENT</a></h2>
                     <h2><a href="/aboutus">ABOUT US</a></h2>
                 </div>
             </div>

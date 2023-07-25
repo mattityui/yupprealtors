@@ -24,8 +24,11 @@
 
 
     <div class="container">
-        <p class="text-center py-5 fs-1 ">
-            <i>"Don't just strive for excellence, you have to maintain it" </i>
+        <p class="text-center pt-5 fs-2 m-0 ">
+            <strong><i>"Don't just strive for excellence, you have to maintain it" </i></strong>
+        </p>
+        <p class="text-center pb-5 fs-5 ">
+            <i> - Company motto</i>
         </p>
         <div class="row mb-5 text-center">
             <div class="col-lg-4">

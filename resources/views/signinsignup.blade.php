@@ -102,7 +102,9 @@
         </div>
         <div class="panels-container">
             <div class="panel left-panel">
+
                 <div class="content">
+                    <img src="{{asset('images/yupp-logo.png')}}" alt="" class="image pt-4" />
                     <h3>Welcome to <br />our community</h3>
                     <p>
                         Sign in now to personalize, updated daily, and beautifully presented.
@@ -111,10 +113,11 @@
                     </p>
                     <button class="btn" id="sign-in-btn">Sign in</button>
                 </div>
-                <img src="../images/hotel_logo.png" alt="" class="image pt-4" />
+
             </div>
             <div class="panel right-panel">
                 <div class="content">
+                    <img src="{{asset('images/yupp-logo.png')}}" alt="" class="image pt-4" />
                     <h3>Let's find your comfort home, <br> Join us!</h3>
                     <p>
                         Sign up now to personalize, updated daily, and beautifully presented.
